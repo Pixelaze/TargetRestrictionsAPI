@@ -1,0 +1,8 @@
+name: TargetRestrictionsAPI
+version: '${project.version}'
+main: com.github.Pixelaze.TargetRestrictionsAPI.TargetRestrictionsAPI
+api-version: 1.18
+depend: [ ]
+softdepend: [ MythicMobs, Towny, WorldGuard, CMI, Factions ]
+authors: [ Pixelaze ]
+description: This plugin adds a new MythicMobs condition, that checks if player can target another entity, using Towny, WorldGuard and other plugins.

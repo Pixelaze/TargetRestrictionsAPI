@@ -1,0 +1,87 @@
+# Configuration of TargetRestrictionsAPI plugin
+# Check wiki for more information
+
+# These settings configure custom FriendlyFire manager
+# to check if one player can target another player in PvP
+friendly-fire:
+  # Handling friendly fire or not, set to false
+  # if you don't want to TargetRestrictionsAPI checking FriendlyFire
+  #
+  # Default: false
+  handle-friendly-fire: false
+  # If true, will use All Target Manager, instead of
+  # specific. Useless, if handle-friendly-fire is false.
+  #
+  # Default: true
+  use-all-target-manager: true
+  # List of used Target Managers to check the FriendlyFire.
+  # Useless, if use-all-target-manager is true or
+  # if handle-friendly-fire is false
+  use-specific-target-managers: []
+#    - towny
+#    - factions
+  # Interaction type of PvP, set to:
+  # FULLY_OFFENSE if you want to make able PvP only to enemies
+  # OFFENSE       if you want to make able PvP to enemies and neutral
+  # NEUTRAL       if you want to make able PvP only to neutral(but no enemies or allies...)
+  # SUPPORT       if you want to make able PvP to neutral and allies(but no enemies...)
+  # FULLY_SUPPORT if you want to make able PvP only to allies(but no enemies or neutral...)
+  #
+  # Can be in any case, but I recommend to use UPPER_CASE
+  #
+  # Default: OFFENSE
+  pvp-interaction-type: "OFFENSE"
+  # These settings configure message, that send to player
+  # if he tries to friendly fire.
+  message:
+    send-message: true
+    # Type of message
+    # CHAT      to chat message
+    # TITLE     to title message
+    # ACTIONBAR to actionbar message
+    # BOSSBAR   to bossbar message
+    #
+    # Can be in any case, but I recommend to UPPER_CASE
+    #
+    # Default: CHAT
+    message-type: "CHAT"
+    # Use {target} to replace it with name of target
+    # Useless if message-type is not TITLE
+    title-message:
+      title: ""
+      subtitle: "&cYou tried to FriendlyFire {target}!"
+    # Use {target} to replace it with name of target
+    # Useless if message-type is TITLE
+    message: "&cYou tried to FriendlyFire {target}!"
+
+# Prefix for Target Manager, that checks for all target managers
+# if caster can target or if the target is targetable.
+#
+# Default: all
+all-target-manager-prefix: "all"
+
+# Disables checks of specific Target Managers in All Target Manager
+#
+# Default: []
+all-target-manager-disable: []
+#  - vanilla
+
+# These settings configure custom MythicMobs conditions
+# behaviour. If you don't have MythicMobs plugin, you can ignore it.
+mythic-mobs-behaviour:
+  # Suffix of canTarget condition. For can target condition
+  # it's being prefixSuffix label to activate, for example with
+  # TownyTargetManager: townyCanTargetRestrictions
+  #
+  # Can be in any case, because checking condition acts with ignoring case.
+  #
+  # Default: CanTargetRestrictions
+  can-target-suffix: "CanTargetRestrictions"
+  # Suffix of isTargetable condition. For is targetable condition
+  # it's being prefixSuffix label to activate, for example with
+  # VanillaTargetManager: vanillaIsTargetable
+  #
+  # Can be in any case, because checking condition acts with ignoring case.
+  #
+  # Default: IsTargetable
+  is-targetable-suffix: "IsTargetable"
